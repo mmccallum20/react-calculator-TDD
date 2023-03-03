@@ -2,17 +2,29 @@ import React from "react";
 import { shallow } from "enzyme";
 import Calculator from "./Calculator";
 import Display from "../Display/Display";
+import KeyPad from "../Keypad/Keypad";
 
 describe("Calculator", () => {
   let wrapper;
 
   beforeEach(() => (wrapper = shallow(<Calculator />)));
 
-  it("should render a Display component", () => {
+  it("should render correctly", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should render the Display and Keypad components", () => {
     expect(
-      wrapper.containsMatchingElement(
-        <Display displayValue={wrapper.instance().state.displayValue} />
-      )
+      wrapper.containsAllMatchingElements([
+        <Display displayValue={wrapper.instance().state.displayValue} />,
+        <KeyPad
+          callOperator={wrapper.instance().callOperator}
+          numbers={wrapper.instance().state.numbers}
+          operators={wrapper.instance().state.operators}
+          setOperator={wrapper.instance().setOperator}
+          updateDisplay={wrapper.instance().updateDisplay}
+        />,
+      ])
     ).toEqual(true);
   });
 
