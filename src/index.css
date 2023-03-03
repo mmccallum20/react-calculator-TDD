@@ -14,7 +14,7 @@ app variables
   --submit-key-color-hover: #aa6e00;
 
   /* font */
-  --main-font: 'Orbitron', sans-serif;
+  --main-font: "Orbitron", sans-serif;
 
   /* font colors */
   --display-text-color: #23e000;
@@ -44,7 +44,7 @@ app variables
 @media screen and (max-width: 1024px) {
   :root {
     /* font sizes */
-    --display-text-size: 6em;
+    --display-text-size: 10em;
     --key-text-size: 3em;
 
     /* calculator dimensions */
