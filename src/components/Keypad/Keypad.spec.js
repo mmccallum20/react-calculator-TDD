@@ -17,7 +17,21 @@ describe("Keypad", () => {
     );
   });
 
-  it("should render a <div />", () => {
-    expect(wrapper.find("div").length).toEqual(1);
+  it("should render 3 <div />s", () => {
+    expect(wrapper.find("div").length).toEqual(3);
+  });
+
+  it("renders the value of numbers", () => {
+    wrapper.setProps({ numbers: ["0", "1", "2"] });
+    expect(wrapper.find(".numbers-container").text()).toEqual("012");
+  });
+
+  it("renders the values of operators", () => {
+    wrapper.setProps({ operators: ["+", "-", "*", "/"] });
+    expect(wrapper.find(".operators-container").text()).toEqual("+-*/");
+  });
+
+  it("should render an instance of the Key component", () => {
+    expect(wrapper.find("Key").length).toEqual(1);
   });
 });
