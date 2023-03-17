@@ -1,7 +1,6 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 import KeyPad from "./Keypad";
-import Key from "../Key/Key";
 
 describe("Keypad", () => {
   let wrapper;

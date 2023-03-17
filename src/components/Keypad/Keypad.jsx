@@ -4,11 +4,11 @@ import "./Keypad.css";
 import Key from "../Key/Key";
 
 const KeyPad = ({
+  updateDisplay,
   callOperator,
   numbers,
   operators,
   setOperator,
-  updateDisplay,
 }) => {
   const numberKeys = numbers.map((number) => (
     <Key
